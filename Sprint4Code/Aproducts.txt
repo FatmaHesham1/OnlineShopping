@@ -10,9 +10,6 @@ device
 laptop
 pc
 12345
-pen
-penn
-15
 Product1
 cat
 100
