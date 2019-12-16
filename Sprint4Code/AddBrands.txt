@@ -1,0 +1,6 @@
+brand1
+cat1
+Brand2
+cat2
+NIKE
+sports
