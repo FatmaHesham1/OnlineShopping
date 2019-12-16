@@ -26,6 +26,7 @@ public class Collaborator_Controller {
  String pass = user1.getPassword();
  String stat = user1.getLogin_stat();
 
+
  Collaborators Stowner = new Collaborators();
  public void Collaborator_Controller() throws IOException {
 
@@ -38,7 +39,7 @@ public class Collaborator_Controller {
    System.out.println(" Collaborator menu.... \n");
    System.out.println("1.) Add collaborator : \n");
    System.out.println("2.) Edit history : \n");
-   System.out.println("3.) Add product : \n");
+ 
    System.out.println("4.) Delete product : \n ");
    System.out.println("5.) Exit \n ");
 
@@ -63,14 +64,14 @@ public class Collaborator_Controller {
 
    case 2:
    if (itemList==null)
-    itemList = listAllProducts();
+    itemList = Stowner.listAllProducts();
     // print current item in stock 
     System.out.println("************************************************* INVENTORY ********************s***************************");
     ProductDetails.printInvoiceHeader();
     itemList.forEach(ProductDetails::printInvoice);
 
     // print sold item 
-    List < ProductDetails > soldItems = listSoldProducts();
+    List < ProductDetails > soldItems = Stowner.listSoldProducts();
     if (soldItems.size()>0){
         System.out.println("\n\n\n************************************************ SOLD PRODUCTS *********************************************");
 
@@ -79,14 +80,12 @@ public class Collaborator_Controller {
 }
     break;
 
-   case 3:
-
-    break;
+  
 
 
    case 4:
    if (itemList==null)
-   itemList = listAllProducts();
+   itemList = Stowner.listAllProducts();
    System.out.print("Select product index you wanna delete  :");
     int index = input.nextInt();
     if (index<0 || index>=itemList.size()){
@@ -95,7 +94,7 @@ public class Collaborator_Controller {
 
     }
     itemList.remove(index);
-    commitChange(itemList);
+    Stowner.commitChange(itemList);
     break;
 
 
@@ -113,92 +112,10 @@ while (choice != 5);
 
 
 
- public void commitChange(List < ProductDetails > itemList  ) throws IOException
- {
-
-        if (itemList!=null){
-                File usersFile = new File("Aproducts.txt");
-                FileWriter writer = new FileWriter(usersFile);
-                for (ProductDetails record: itemList) {
-                        writer.write(record.getProductName()+"\n" +
-                        
-                        record.getCategory() + "\n" 
-                        
-                        + record.getPrice() + "\n");
-                       }
-                    
-                       writer.close();
-          }
- }
-
- /**
-  * 
-  */
- public List < ProductDetails > listAllProducts() {
-
-  BufferedReader bufferedReader;
-  List < ProductDetails > itemList = new ArrayList < > ();
-
-  try {
-   bufferedReader = new BufferedReader(new FileReader("Aproducts.txt"));
-   String line;
-   List < String > lines = new ArrayList < String > ();
-
-   bufferedReader.lines().forEach(s -> {
-    lines.add(s);
-
-    if (lines.size() == 3) {
-     itemList.add(new ProductDetails(lines.get(0), lines.get(1), lines.get(2)));
-     lines.clear();
-    }
-
-   });
-
-   bufferedReader.close();
-  } catch (FileNotFoundException e) {
-   e.printStackTrace();
-
-  } catch (IOException e) {
-   e.printStackTrace();
-  }
-
-  return itemList;
- }
-
-
  
  /**
   * 
   */
-  public List < ProductDetails > listSoldProducts() {
-
-        BufferedReader bufferedReader;
-        List < ProductDetails > itemList = new ArrayList < > ();
-      
-        try {
-         bufferedReader = new BufferedReader(new FileReader("SoldProducts.txt"));
-         String line;
-         List < String > lines = new ArrayList < String > ();
-      
-         bufferedReader.lines().forEach(s -> {
-          lines.add(s);
-      
-          if (lines.size() == 3) {
-           itemList.add(new ProductDetails(lines.get(1), lines.get(0), lines.get(2)));
-           lines.clear();
-          }
-      
-         });
-      
-         bufferedReader.close();
-        } catch (FileNotFoundException e) {
-        //  e.printStackTrace();
-      
-        } catch (IOException e) {
-        //  e.printStackTrace();
-        }
-      
-        return itemList;
-       }
+ 
 
 }
