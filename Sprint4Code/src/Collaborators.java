@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.FileWriter;
 
 /**
  *
@@ -15,30 +14,54 @@ import java.util.Scanner;
  */
 public class Collaborators {
 
-    Database DB = new Database();
+  
+ /**
+  * 
+  */
+ public static final String USER_BASE_PATH = "users.txt";
 
-    public void Add_collaborator() throws IOException {
 
-        System.out.println("\n Collaborator Name & Store : ");
-        Scanner input6 = new Scanner(System.in);
-        String Ncollaborator = input6.next();
+ 
+ /**
+  * 
+  */
+ public void Add_collaborator() throws IOException {
 
-        System.out.println("\n password : ");
-        Scanner input7 = new Scanner(System.in);
-        String Scollaborator = input7.next();
 
-        System.out.println("\n Login_stat : ");
-        Scanner input8 = new Scanner(System.in);
-        String Lcollaborator = input8.next();
+  File usersFile = new File(this.USER_BASE_PATH);
+  FileWriter writer = new FileWriter(usersFile, true);
+  String[] record = this.scanUserInput();
 
-        File file2 = new File("users.txt");
+  for (String i: record) {
+   writer.write(i);
+   writer.write("\n");
+  }
 
-        String array[] = {Ncollaborator, Scollaborator, Lcollaborator};
+  writer.close();
 
-        DB.Write_to_file(file2, array);
+  System.out.println("Collaborator is added ! ");
 
-        System.out.println("Collaborator is added ! ");
+ }
 
-    }
+
+ /**
+  * 
+  */
+ public String [] scanUserInput() {
+  Scanner input = new Scanner(System.in);
+  System.out.print("Please Enter your username :  ");
+  String Username = input.next();
+  System.out.print("Please Enter your Password : ");
+  String password = input.next();
+  System.out.print("Please Enter your  email : ");
+  String email = input.next();
+  System.out.println("\n Saving your new accounts....");
+
+  return new String [] {
+   Username,
+   password,
+   "collaborator"
+   };
+ }
 
 }
