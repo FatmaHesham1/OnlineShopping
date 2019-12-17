@@ -37,7 +37,8 @@ public class StoreController {
             System.out.println("1.) Add Items  : \n");
             System.out.println("2.) Add newStore : \n");
             System.out.println("3.) collabrators : \n");
-            System.out.println("4.) Exit \n");
+            System.out.println("4.) Buy Products : \n");
+            System.out.println("5.) Exit \n");
 
             System.out.print("\nEnter Your Menu Choice: ");
 
@@ -59,18 +60,19 @@ public class StoreController {
 
                 Collaborat.Collaborator_Controller();
                 break;
-
             case 4:
+                stowner.BuyAsAStoreOwner();
+            case 5:
                 System.out.println("Exiting Program...");
                 System.exit(0);
                 break;
         }
 
-        if (choice > 4 || choice < 1) {
+        if (choice > 5 || choice < 1) {
             System.out.println("This is not a valid Menu Option! Please Select Another.");
             do {
                 choice = input.nextInt();
-            } while (choice < 5);
+            } while (choice < 6);
         }
 
     }
