@@ -11,10 +11,14 @@
  */
 public class StatsticsDetails {
 
+    public StatsticsDetails() {
+    }
+    
+
     int NumberOfProducts_viewed = 0;
     int NumberOfStores_visited = 0;
     int NumberOfProducts_bought = 0;
-    Database DB = new Database();
+    DatabaseReading DB = new DatabaseReading();
 
     public int getNumberOfProducts_viewed() {
         return NumberOfProducts_viewed;

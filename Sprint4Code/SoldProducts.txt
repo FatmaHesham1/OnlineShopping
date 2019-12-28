@@ -13,3 +13,9 @@ Product1
 BB
 coca
 100
+fatma
+laptop
+1000.0
+fatma
+laptop
+1000.0

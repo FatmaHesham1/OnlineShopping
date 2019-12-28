@@ -9,45 +9,47 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Statstics_user implements Statstics {
+public class Statstics_user  {
 
-    Database DB = new Database();
+    public Statstics_user() {
+    }
+    
+
+ DatabaseCounting databasecount=new DatabaseCounting();
+      File file = new File("SoldProducts.txt");
+      DatabaseMaxMin databaseMaxMin=new DatabaseMaxMin();
 
     public int User_sum() throws IOException {
-        File file = new File("SoldProducts.txt");
+   
+        
+       
+        int summation = databasecount.Counting(file);
+       return summation;
 
-        int summation = DB.Counting(file);
-
-        return summation;
+       
     }
 
     public int User_avg() throws IOException {
 
-        int AVGsum = User_sum();
-        return AVGsum / 2;
+   int summation=User_sum();
+   return summation/2;
 
     }
 
-    @Override
-    public void Max() {
+  
+    public void Max() throws IOException {
 
-        try {
-            File file = new File("SoldProducts.txt");
-            System.out.println("Maximum user using site is : " + DB.Sort(0, file, "MAX"));
-        } catch (IOException ex) {
-            Logger.getLogger(Statstics_user.class.getName()).log(Level.SEVERE, null, ex);
-        }
+          databaseMaxMin.Sort(0, file, "MAX");
+         
+       
 
     }
 
-    @Override
-    public void Min() {
 
-        File file = new File("SoldProducts.txt");
-        try {
-            System.out.println("Minmum user using site is  : " + DB.Sort(0, file, "min"));
-        } catch (IOException ex) {
-            Logger.getLogger(Statstics_user.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void Min() throws IOException {
+
+     databaseMaxMin.Sort(0, file, "min");
+           
+       
     }
 }

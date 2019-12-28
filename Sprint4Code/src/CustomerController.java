@@ -1,25 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
- *
- * @author User
- */
+
 public class CustomerController {
+
+    public CustomerController() {
+    }
+    
 
     public void Customer_controller() throws IOException {
 
         Scanner input = new Scanner(System.in);
-        boolean mainLoop = true;
-        Customer customer1 = new Customer();
+    
+        CustomerViewing_Site customer1 = new CustomerViewing_Site();
+        Customer customerbuy=new Customer();
 
         int choice = 0;
         do {
@@ -37,18 +35,18 @@ public class CustomerController {
         switch (choice) {
 
             case 1:
-                File file1 = new File("Aproducts.txt");
-                customer1.viewproduct(file1);
+               
+                customer1.viewproduct();
                 break;
 
             case 2:
-                File file3 = new File("Sproducts.txt");
-                customer1.viewStore(file3);
+                
+                customer1.viewStore();
 
                 break;
 
             case 3:
-                customer1.BuyProducts();
+             customerbuy.BuyProduct();
                 break;
 
             case 4:

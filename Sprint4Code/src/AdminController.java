@@ -6,19 +6,27 @@ import java.util.Scanner;
 
 public class AdminController {
 
+    public AdminController() {
+    }
+    
+     Adding_Brands brandadd=new Adding_Brands();
+      AddingOffers adminOffer=new AddingOffers();
+
+        Statstics_controller_user StatU = new Statstics_controller_user();
+        Statstics_controller_products StatP = new Statstics_controller_products();
+
     public void Admin_controller() throws IOException {
         Scanner input = new Scanner(System.in);
 
-        Admin admin1 = new Admin();
+        Adding_Admin_Items admin1 = new Adding_Admin_Items();
         ProductDetails d = new ProductDetails();
         String pname = d.getProductName();
         String pcategory = d.getCategory();
         String price = d.getPrice();
         String br = d.getBrandName();
         String brcat = d.getBrandCategory();
-
-        Statstics_controller_user StatU = new Statstics_controller_user();
-        Statstics_controller_products StatP = new Statstics_controller_products();
+    
+       
 
         int choice = 0;
         do {
@@ -38,19 +46,22 @@ public class AdminController {
 
             case 1:
 
-                admin1.addItems(pname, pcategory, price);
+                admin1.AdminAddItems(pname, pcategory, price);
+                System.out.println("Product is added successfuly!");
 
                 break;
 
             case 2:
 
-                admin1.addNewBrand(br, brcat);
+                 Adding_Brands brandadd=new Adding_Brands();
+                 brandadd.addNewBrand(br, brcat);
+                 System.out.println("Brand Is Added Successfuly");
 
                 break;
 
             case 3:
-
-                admin1.Add_offers();
+                   System.out.println("Enter the product Name you want to apply offer on : ");
+                adminOffer.choose_offered_product(pname);
 
                 break;
 
