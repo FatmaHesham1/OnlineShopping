@@ -11,22 +11,23 @@ import java.util.Scanner;
  */
 /**
  *
- * @author User
+ * @author UserAccounts
  */
 public class Facade_pattern {
 
     public static void main(String[] args) throws IOException {
 
-        Database DB = new Database();
+        DatabaseReading DB = new DatabaseReading();
         Scanner input = new Scanner(System.in);
 
-        User user1 = new User();
+        UserAccounts user1 = new UserAccounts();
+       UserDetails userdetails=new UserDetails();
 
-        String user = user1.getUsername();
-        String pass = user1.getPassword();
-        String stat = user1.getLogin_stat();
-        String mail = user1.getEmail();
-        String fname = user1.getFname();
+        String user = userdetails.getUsername();
+        String pass = userdetails.getPassword();
+        String stat = userdetails.getLogin_stat();
+        String mail = userdetails.getEmail();
+        String fname = userdetails.getFname();
 
         AdminController admin1 = new AdminController();
         StoreController Storeowner1 = new StoreController();
@@ -48,7 +49,6 @@ public class Facade_pattern {
             case 1:
 
                 user1.Register(user, pass, stat, fname, mail);
-
                 break;
 
             case 2:
@@ -61,7 +61,7 @@ public class Facade_pattern {
                     customer1.Customer_controller();
                 } else if (testType.equalsIgnoreCase("storeowner") || testType.equalsIgnoreCase("collaborator")) {
                     Storeowner1.Store_controller();
-                } else {
+                } else{
                     System.out.println("error ");
                 }
 

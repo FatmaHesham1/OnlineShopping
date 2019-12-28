@@ -19,30 +19,33 @@ import java.util.logging.Logger;
  *
  * @author User
  */
-public class Statstics_products implements Statstics {
+public class Statstics_products  {
 
-    Database DB = new Database();
+    public Statstics_products() {
+    }
+    
 
-    @Override
-    public void Max() {
-        try {
+ DatabaseMaxMin databasesort=new  DatabaseMaxMin();
+ Stat_product_viewer statviewer=new  Stat_product_viewer();
+
+
+    public void MaxProduct() throws IOException {
+     
             File file = new File("SoldProducts.txt");
-
-            System.out.println("Maximum product sold is : " + DB.Sort(2, file, "MAX"));
-        } catch (IOException ex) {
-            Logger.getLogger(Statstics_products.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            statviewer.MaxProductView();
+            databasesort.Sort(2, file, "MAX");
+            
+       
     }
 
-    @Override
-    public void Min() {
+   
+    public void MinProduct() throws IOException {
 
-        try {
+       
             File file = new File("SoldProducts.txt");
-            System.out.println("Minmum product sold is : " + DB.Sort(2, file, "min"));
-        } catch (IOException ex) {
-            Logger.getLogger(Statstics_products.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+            statviewer.MinProductView();
+            databasesort.Sort(2, file, "min");
+            
+       
     }
 }

@@ -15,6 +15,10 @@ import java.util.Scanner;
  */
 public class Statstics_controller_products {
 
+    public Statstics_controller_products() {
+    }
+    
+
     Statstics_user statU = new Statstics_user();
 
     Statstics_products statP = new Statstics_products();
@@ -29,10 +33,10 @@ public class Statstics_controller_products {
             System.out.println("Sum of products are : " + statU.User_sum());
 
         } else if (letter == 'M') {
-            statP.Min();
+            statP.MinProduct();
 
         } else {
-            statP.Max();
+            statP.MaxProduct();
         }
 
     }

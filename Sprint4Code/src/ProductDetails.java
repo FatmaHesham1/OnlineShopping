@@ -80,20 +80,7 @@ public class ProductDetails extends TimerTask {
 
     
  
-    public static void printInvoiceHeader() {
-        System.out.println(String.format("%30s %25s %10s %25s %10s", "Item", "|", "Price($)", "|", "Category"));
-        System.out.println(String.format("%s", "----------------------------------------------------------------------------------------------------------------"));
-    }
-
-    public static void printSoldItemsHeader() {
-        System.out.println(String.format("%30s %25s %10s %25s %10s", "Item", "|", "Price($)", "|", "Customer"));
-        System.out.println(String.format("%s", "----------------------------------------------------------------------------------------------------------------"));
-    }
-    
-    public void printInvoice() {
-        System.out.println(String.format("%30s %25s %10s %25s %10s", this.getProductName(), "|", this.getPrice(), "|", this.getCategory()));
-    }
-
+   
     @Override
     public void run() {
       Random rand = new Random(); 
@@ -108,6 +95,9 @@ public class ProductDetails extends TimerTask {
          System.out.println("Number of user buy products in stores : "+rand_int3);
         System.out.println("Number of users explore his products : "+rand_int4);
 
+    }
+      public void printInvoice() {
+        System.out.println(String.format("%30s %25s %10s %25s %10s", this.getProductName(), "|", this.getPrice(), "|", this.getCategory()));
     }
 }
 

@@ -10,18 +10,20 @@ import java.util.Scanner;
 
 /**
  *
- * @author User
+ * @author UserAccounts
  */
 public class StoreController {
 
-    User user1 = new User();
-    Collaborator_Controller Collaborat = new Collaborator_Controller();
+    public StoreController() {
+    }
+    
 
-    public void Store_controller() throws IOException {
-
-        Scanner input = new Scanner(System.in);
-        boolean mainLoop = true;
-        StoreOwner stowner = new StoreOwner();
+    UserAccounts user1 = new UserAccounts();
+    CollaboratorController Collaborat = new CollaboratorController();
+     AddingStowner_Items stowner = new AddingStowner_Items();
+     AddingStores addstore=new AddingStores();
+     StoreOwner storebuy=new StoreOwner();
+     
         ProductDetails d = new ProductDetails();
 
         String pname = d.getProductName();
@@ -30,6 +32,12 @@ public class StoreController {
         String sn = d.getStoreName();
         String Type = d.getType();
         String location = d.getLocation();
+
+    public void Store_controller() throws IOException {
+
+        Scanner input = new Scanner(System.in);
+      
+       
 
         int choice = 0;
         do {
@@ -52,7 +60,8 @@ public class StoreController {
                 break;
 
             case 2:
-                stowner.addNewStore(sn, location, Type);
+                addstore.addNewStore(sn, location, Type);
+                System.out.println(" \n Store is added successfully ! ");
 
                 break;
 
@@ -60,8 +69,10 @@ public class StoreController {
 
                 Collaborat.Collaborator_Controller();
                 break;
+                
             case 4:
-                stowner.BuyAsAStoreOwner();
+               // storebuy.BuyAsAStoreOwner();
+                break;
             case 5:
                 System.out.println("Exiting Program...");
                 System.exit(0);
