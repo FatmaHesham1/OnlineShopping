@@ -22,6 +22,7 @@ public class StoreController {
         Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
         StoreOwner stowner = new StoreOwner();
+        Offer of =new Offer();
         ProductDetails d = new ProductDetails();
 
         String pname = d.getProductName();
@@ -61,7 +62,7 @@ public class StoreController {
                 Collaborat.Collaborator_Controller();
                 break;
             case 4:
-                stowner.BuyAsAStoreOwner();
+                of.BuyAsAStoreOwner();
             case 5:
                 System.out.println("Exiting Program...");
                 System.exit(0);

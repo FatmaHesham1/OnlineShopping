@@ -20,6 +20,7 @@ public class CustomerController {
         Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
         Customer customer1 = new Customer();
+        Offer of=new Offer();
 
         int choice = 0;
         do {
@@ -48,7 +49,7 @@ public class CustomerController {
                 break;
 
             case 3:
-                customer1.BuyProducts();
+                of.BuyProducts();
                 break;
 
             case 4:
