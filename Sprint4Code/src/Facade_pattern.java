@@ -17,7 +17,7 @@ public class Facade_pattern {
 
     public static void main(String[] args) throws IOException {
 
-        DatabaseReading DB = new DatabaseReading();
+        
         Scanner input = new Scanner(System.in);
 
         UserAccounts user1 = new UserAccounts();
@@ -48,7 +48,11 @@ public class Facade_pattern {
 
             case 1:
 
-                user1.Register(user, pass, stat, fname, mail);
+               String type= user1.Register(user, pass, stat, fname, mail);
+               if(type.equalsIgnoreCase("Admin")||type.equalsIgnoreCase("Collaborator"))
+               { System.out.println("This account cannot be created !");
+               break; 
+               }
                 break;
 
             case 2:

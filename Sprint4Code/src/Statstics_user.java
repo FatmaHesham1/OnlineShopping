@@ -18,6 +18,7 @@ public class Statstics_user  {
  DatabaseCounting databasecount=new DatabaseCounting();
       File file = new File("SoldProducts.txt");
       DatabaseMaxMin databaseMaxMin=new DatabaseMaxMin();
+      Stat_User_view statview=new Stat_User_view();
 
     public int User_sum() throws IOException {
    
@@ -37,18 +38,20 @@ public class Statstics_user  {
     }
 
   
-    public void Max() throws IOException {
+    public String Max() throws IOException {
 
-          databaseMaxMin.Sort(0, file, "MAX");
+          statview.MaxUserView();
+       String value=  databaseMaxMin.Sort(2, file, "MAX");
+       return value;
          
        
 
     }
-
-
-    public void Min() throws IOException {
-
-     databaseMaxMin.Sort(0, file, "min");
+    public String Min() throws IOException {
+        
+         statview.MinUserView();
+    String value= databaseMaxMin.Sort(2, file, "min");
+    return value;
            
        
     }

@@ -32,14 +32,14 @@ public class Statstics_controller_user {
             System.out.println("Sum of users are : " + statU.User_sum());
 
         } else if (letter == 'M') {
-            statU.Min();
+            System.out.println (statU.Min());
 
         } else if (letter == 'X') {
 
-            statU.Max();
+             System.out.println (statU.Max());
 
         } else {
-            System.out.println("Avergae number of users are : " + statU.User_avg());
+            System.out.println("Average number of users are : " + statU.User_avg());
         }
     }
 

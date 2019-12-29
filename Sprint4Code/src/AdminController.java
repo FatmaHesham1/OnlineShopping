@@ -60,8 +60,8 @@ public class AdminController {
                 break;
 
             case 3:
-                   System.out.println("Enter the product Name you want to apply offer on : ");
-                adminOffer.choose_offered_product(pname);
+                 
+                adminOffer.choose_offered_product();
 
                 break;
 

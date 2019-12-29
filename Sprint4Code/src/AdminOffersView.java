@@ -16,6 +16,16 @@ public class AdminOffersView {
     public AdminOffersView() {
     }
     
+    public String chooseProduct(){
+        
+        System.out.println("------------------------------------");
+    System.out.println("Enter the product you want to apply offers on : ");
+            Scanner input4 = new Scanner(System.in);
+            String offer = input4.next();
+            
+            return offer;
+    
+    }
     
     public String[] offers(){
     

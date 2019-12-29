@@ -43,12 +43,7 @@ public class RegisterationView {
     
     }
     
-    public void AccountExists(){
-    
-    System.out.println("Sorry This account cannot be created !");
-    }
-    
-    public void AccountCreated(){
-  System.out.println("Account is created !");
-    }
+  public void userused(){
+   System.out.println("The user name is used before..please try another one. ");
+  }
 }

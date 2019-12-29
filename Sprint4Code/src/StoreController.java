@@ -24,6 +24,7 @@ public class StoreController {
      AddingStores addstore=new AddingStores();
      StoreOwner storebuy=new StoreOwner();
      
+     
         ProductDetails d = new ProductDetails();
 
         String pname = d.getProductName();
@@ -32,6 +33,7 @@ public class StoreController {
         String sn = d.getStoreName();
         String Type = d.getType();
         String location = d.getLocation();
+        ActionsController action=new ActionsController();
 
     public void Store_controller() throws IOException {
 
@@ -42,16 +44,17 @@ public class StoreController {
         int choice = 0;
         do {
             System.out.println(" Welcome , StoreOwner ! \n");
-            System.out.println("1.) Add Items  : \n");
-            System.out.println("2.) Add newStore : \n");
-            System.out.println("3.) collabrators : \n");
-            System.out.println("4.) Buy Products : \n");
-            System.out.println("5.) Exit \n");
+            System.out.println("1.) Add Items  : ");
+            System.out.println("2.) Add newStore : ");
+            System.out.println("3.) collabrators : ");
+            System.out.println("4.) Buy Products : ");
+            System.out.println("5.) Other Actions : ");
+            System.out.println("6.) Exit \n");
 
-            System.out.print("\nEnter Your Menu Choice: ");
+            System.out.print("Enter Your Menu Choice: ");
 
             choice = input.nextInt();
-        } while (choice > 4);
+        } while (choice > 6);
 
         switch (choice) {
 
@@ -61,7 +64,7 @@ public class StoreController {
 
             case 2:
                 addstore.addNewStore(sn, location, Type);
-                System.out.println(" \n Store is added successfully ! ");
+                System.out.println("Store is added successfully ! ");
 
                 break;
 
@@ -70,20 +73,29 @@ public class StoreController {
                 Collaborat.Collaborator_Controller();
                 break;
                 
-            case 4:
-               // storebuy.BuyAsAStoreOwner();
+                 case 4:
+                    
+                storebuy.BuyAsAStoreOwner();
                 break;
+                
+                
             case 5:
+              action.Actions();
+                break;
+                
+                
+                
+            case 6:
                 System.out.println("Exiting Program...");
                 System.exit(0);
                 break;
         }
 
-        if (choice > 5 || choice < 1) {
+        if (choice > 6 || choice < 1) {
             System.out.println("This is not a valid Menu Option! Please Select Another.");
             do {
                 choice = input.nextInt();
-            } while (choice < 6);
+            } while (choice < 7);
         }
 
     }

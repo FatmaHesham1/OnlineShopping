@@ -15,11 +15,11 @@ public class Stat_product_viewer {
     
     
     public void MaxProductView(){
-     System.out.println("Maximum product sold is : \n ");
+     System.out.println("Maximum product sold is :");
 }
     
     public void MinProductView(){
-    System.out.println("Minmum product sold is : \n");
+    System.out.println("Minmum product sold is :");
     
     }
 }

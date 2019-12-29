@@ -17,7 +17,7 @@ public class AddingCollaboratorView {
   String password = input.next();
   System.out.print("Please Enter your  email : ");
   String email = input.next();
-  System.out.println("\n Saving your new accounts....");
+  System.out.println("\n Saving your collaborator account....");
 
   return new String [] {
    Username,

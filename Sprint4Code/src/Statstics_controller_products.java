@@ -33,10 +33,10 @@ public class Statstics_controller_products {
             System.out.println("Sum of products are : " + statU.User_sum());
 
         } else if (letter == 'M') {
-            statP.MinProduct();
+           System.out.println(statP.MinProduct());
 
         } else {
-            statP.MaxProduct();
+           System.out.println(statP.MaxProduct()); 
         }
 
     }

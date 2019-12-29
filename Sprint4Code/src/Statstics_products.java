@@ -29,22 +29,25 @@ public class Statstics_products  {
  Stat_product_viewer statviewer=new  Stat_product_viewer();
 
 
-    public void MaxProduct() throws IOException {
+    public String MaxProduct() throws IOException {
      
             File file = new File("SoldProducts.txt");
             statviewer.MaxProductView();
-            databasesort.Sort(2, file, "MAX");
+          String value=  databasesort.Sort(0, file, "MAX");
+          return value;
             
        
     }
 
    
-    public void MinProduct() throws IOException {
+    public String MinProduct() throws IOException {
 
        
             File file = new File("SoldProducts.txt");
             statviewer.MinProductView();
-            databasesort.Sort(2, file, "min");
+           String value= databasesort.Sort(0, file, "min");
+           
+           return value;
             
        
     }

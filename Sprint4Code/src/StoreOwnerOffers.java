@@ -18,8 +18,8 @@ public class StoreOwnerOffers {
         Double TotalPrice;
     SoldProductsDetails productDetails=new SoldProductsDetails ();
     String FirstTime =productDetails.getFirstTime();
-
-   
+}
+   /*
 
     public void StoreOffers(){
         
@@ -79,3 +79,4 @@ public class StoreOwnerOffers {
     
     }
 }
+*/

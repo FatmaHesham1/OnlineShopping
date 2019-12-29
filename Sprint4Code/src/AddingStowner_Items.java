@@ -29,7 +29,7 @@ public class AddingStowner_Items {
        
             
 
-            if (adminverify.verify(Category) == true) {
+            if (adminverify.verify(Stores[1]) == true) {
 
                 
                 FileWriter writeer = new FileWriter("Sproducts.txt", true);

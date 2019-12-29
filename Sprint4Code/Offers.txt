@@ -4,3 +4,6 @@ pen
 coca
 50%
 6
+iphone
+10%
+11000

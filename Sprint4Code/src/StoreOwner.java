@@ -13,6 +13,10 @@ import java.io.IOException;
  * @author User
  */
 public class StoreOwner {
+    
+   
+   
+    
     File file1 = new File("Aproducts.txt");
     File file5 = new File("SoldProducts.txt");
     DatabaseReading databaseread=new DatabaseReading();
@@ -20,6 +24,7 @@ public class StoreOwner {
     DatabaseConfirmation databaseconfirm=new DatabaseConfirmation();
     DatabaseWriter databasewrite=new DatabaseWriter();
     StoreOwnerOffers storeoffer;
+    
 
     public StoreOwner() {
     }
@@ -37,11 +42,9 @@ storeview.CheckingProduct();
       
 
         if (check == true) {
-          String arrayInfo[]=storeview.EnterInfo();
-            String array[]= {arrayInfo[3], TargetProduct,arrayInfo[1]};
+            String arrayInfo[]=storeview.EnterInfo();
+            String array[]= {TargetProduct,arrayInfo[2] ,arrayInfo[1]};
             databasewrite.Write_to_file(file5, array);
-           
-             storeoffer.StoreOffers();
             storeview.ConfirmBuying();
            
             

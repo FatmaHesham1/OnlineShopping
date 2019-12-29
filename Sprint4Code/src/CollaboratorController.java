@@ -23,24 +23,18 @@ public class CollaboratorController {
  UserAccounts useracc=new UserAccounts();
 AddingCollaborator addcoll=new AddingCollaborator();
 
- ListingSoldProducts Stowner = new ListingSoldProducts();
- ListingAllProducts listproduct=new  ListingAllProducts();
- HeadersView headerview=new  HeadersView();
- CommittingChange commitchange=new CommittingChange();
+
  public void Collaborator_Controller() throws IOException {
 
   Scanner input = new Scanner(System.in);
-  List < ProductDetails > itemList = null;
+
 
 
   int choice = 0;
   do {
    System.out.println(" Collaborator menu.... \n");
-   System.out.println("1.) Add collaborator : \n");
-   System.out.println("2.) Listing history : \n");
-   System.out.println("3.) Delete product : \n ");
-   System.out.println("4.) Exit \n ");
-
+   System.out.println("1.) Add collaborator : ");
+   System.out.println("2.) Exit  ");
    System.out.print("\nEnter Your Menu Choice: ");
 
    choice = input.nextInt();
@@ -59,43 +53,9 @@ AddingCollaborator addcoll=new AddingCollaborator();
      System.out.println("This functionality can be used only by StoreOwner . ");
     break;
 
-   case 2:
-   if (itemList==null)
-    itemList = listproduct.listAllProducts();
-    // print current item in stock 
-    System.out.println("************************************************* INVENTORY ********************s***************************");
-    headerview.printInvoiceHeader();
-    itemList.forEach(ProductDetails::printInvoice);
-
-    // print sold item 
-    List < ProductDetails > soldItems = Stowner.listSoldProducts();
-    if (soldItems.size()>0){
-        System.out.println("\n\n\n************************************************ SOLD PRODUCTS *********************************************");
-
-    headerview.printSoldItemsHeader();
-    soldItems.forEach(ProductDetails::printInvoice);
-}
-    break;
-
+   
   
-
-
-   case 3:
-   if (itemList==null)
-   itemList = listproduct.listAllProducts();
-   System.out.print("Select product index you wanna delete  :");
-    int index = input.nextInt();
-    if (index<0 || index>=itemList.size()){
-        System.out.print("INVALID INPUT !!!!!");
-        break;
-
-    }
-    itemList.remove(index);
-    commitchange.commitChange(itemList);
-    break;
-
-
-   case 4:
+   case 2:
     System.out.println("Exiting Program...");
     System.exit(0);
     break;
@@ -103,7 +63,7 @@ AddingCollaborator addcoll=new AddingCollaborator();
 
 }
 
-while (choice > 5);
+while (choice > 2);
 
  }
 

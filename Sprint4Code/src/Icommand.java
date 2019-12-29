@@ -8,13 +8,8 @@
  *
  * @author User
  */
-public class Store_viewing_stat {
-
-    public Store_viewing_stat() {
-        
-        
-        
-    }
+public abstract class Icommand {
+  
+    public abstract void Execute();
     
 }
-

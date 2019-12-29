@@ -30,12 +30,12 @@ public class DatabaseConfirmation {
         String line1;
         String line3;
 
-        if (array1.length == 1 && args == 1) {
+        if (array1.length == 1 && args == 1 ) {
             boolean aExists = false;
 
             while ((line1 = bufferedReader.readLine()) != null & (line2 = bufferedReader.readLine()) != null & (line3 = bufferedReader.readLine()) != null) {
 
-                if (line1.equals(array1[0])) {
+                if (line1.equals(array1[0]) ) {
 
                     aExists = true;
 
@@ -99,7 +99,7 @@ public class DatabaseConfirmation {
             } else {
                 return false;
             }}
-        
+       
         
         
         else {

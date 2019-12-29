@@ -14,10 +14,10 @@ public class Stat_User_view {
     }
     
     public void MinUserView(){
-       System.out.println("Minmum user using site is  : \n" );
+       System.out.println("Minmum user using site is  : " );
     }
     public void MaxUserView(){
-     System.out.println("Maximum user using site is : \n");
+     System.out.println("Maximum user using site is : ");
     }
     public void SumUserView(){
     System.out.println("Sum of users are : \n ");
