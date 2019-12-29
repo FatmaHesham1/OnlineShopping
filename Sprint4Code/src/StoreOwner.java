@@ -23,7 +23,7 @@ public class StoreOwner {
     BuyingViewer storeview=new BuyingViewer(); 
     DatabaseConfirmation databaseconfirm=new DatabaseConfirmation();
     DatabaseWriter databasewrite=new DatabaseWriter();
-    StoreOwnerOffers storeoffer;
+   
     
 
     public StoreOwner() {
