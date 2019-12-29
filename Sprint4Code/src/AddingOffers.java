@@ -17,9 +17,10 @@ public class AddingOffers {
     DatabaseWriter databasewriter=new DatabaseWriter();
     
     
-    public void choose_offered_product(String pname) throws IOException {
+    public void choose_offered_product() throws IOException {
        
         databasereader.view(file3);
+       String pname= offersviewer.chooseProduct();
         String productName[]={pname};
         boolean check=databaseconfirmation.Read(file3, productName, 1);
        

@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 
 public class CustomerController {
+    
+    
 
     public CustomerController() {
     }
@@ -22,12 +24,12 @@ public class CustomerController {
         int choice = 0;
         do {
             System.out.println("\n Welcome , Customer ! \n");
-            System.out.println("1.) View products : \n");
-            System.out.println("2.) View Stores : \n");
-            System.out.println("3.) Buy products : \n");
-            System.out.println("4.) Exit \n ");
+            System.out.println("1.) View products :");
+            System.out.println("2.) View Stores : ");
+            System.out.println("3.) Buy products :");
+            System.out.println("4.) Exit  ");
 
-            System.out.print("\nEnter Your Menu Choice: ");
+            System.out.print("\n Enter Your Menu Choice: ");
 
             choice = input.nextInt();
         } while (choice > 4);
@@ -46,6 +48,7 @@ public class CustomerController {
                 break;
 
             case 3:
+                
              customerbuy.BuyProduct();
                 break;
 

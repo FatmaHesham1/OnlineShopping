@@ -4,3 +4,5 @@ Brand2
 cat2
 NIKE
 sports
+Zara
+clothesss

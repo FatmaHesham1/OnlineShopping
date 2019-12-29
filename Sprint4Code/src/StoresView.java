@@ -20,15 +20,15 @@ public class StoresView {
     public String[] Storeview(){
     
     
-        System.out.println("Storename : \n ");
+        System.out.println("Storename : ");
         Scanner input5 = new Scanner(System.in);
       String  StoreName = input5.next();
 
-        System.out.println("Location : \n ");
+        System.out.println("Location :  ");
         Scanner input6 = new Scanner(System.in);
        String Location = input6.next();
 
-        System.out.println("Type : \n ");
+        System.out.println("Type : ");
         Scanner input7 = new Scanner(System.in);
         String Type = input7.next();
         

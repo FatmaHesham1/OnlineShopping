@@ -5,16 +5,24 @@ import java.util.Scanner;
 
 
 public class BuyingViewer {
+    
+    
 
     public BuyingViewer() {
     }
     
     
     DatabaseReading writer=new DatabaseReading();
-SoldProductsDetails productDetails=new SoldProductsDetails ();
+  SoldProductsDetails productDetails=new SoldProductsDetails ();
+ 
+
+
+
     
+
     public String ChooseProduct(){
-        
+ 
+                
      System.out.println("--------------------------------------------------");
 
         System.out.println("Select the target product : ");
@@ -36,32 +44,37 @@ SoldProductsDetails productDetails=new SoldProductsDetails ();
     }
     
     public String[] EnterInfo() throws IOException{
+       
     
+    CalculateOffers calcoffers = new CalculateOffers();
     
            System.out.println("Please Enter your name :");
             Scanner input6 = new Scanner(System.in);
             String name = input6.next();
+            
+            System.out.println("Enter the price : ");
+        Scanner input9 = new Scanner(System.in);
+        int PriceOfProduct= input9.nextInt();
+        
+       System.out.println("Enter the type : ");
+        Scanner in = new Scanner(System.in);   
+          String type = in.next();
+         
+       
     
         System.out.println("Select the required amount of products : ");
         Scanner input2 = new Scanner(System.in);
         int AmountProduct = input2.nextInt();
-        String amount=Integer.toString(AmountProduct);
-        productDetails.setAmount(amount);
         
-        
+        int discount=calcoffers.Calculate_offer(PriceOfProduct, AmountProduct,type);
+                String dis=String.valueOf(discount);
+                System.out.println("Discount is "+dis);
+                String price=String.valueOf(PriceOfProduct);
+                productDetails.setPrice(price);
+                String amount=String.valueOf(AmountProduct);
+                productDetails.setAmount(amount);
 
-        System.out.println("Enter the price : ");
-        Scanner input9 = new Scanner(System.in);
-        double PriceOfProduct= input9.nextDouble();
-        String price=Double.toString(PriceOfProduct);
-        productDetails.setPrice(price);
-        
-        
-             System.out.println("First time to visit US ?");
-        Scanner input10 = new Scanner(System.in);
-        char letter=input10.next().charAt(0);
-        String letter2=String.valueOf(letter);
-        productDetails.getFirstTime();
+       
         
          System.out.println("Write the shipping address : ");
         Scanner input3 = new Scanner(System.in);
@@ -88,7 +101,7 @@ SoldProductsDetails productDetails=new SoldProductsDetails ();
     
 
         
-         String InfoArray[]={amount,price,letter2,name};
+         String InfoArray[]={amount,dis,name};
         
         return InfoArray;
         
@@ -107,8 +120,7 @@ SoldProductsDetails productDetails=new SoldProductsDetails ();
     System.out.println("Sorry the product doesn't exists ! ");
     
     }
-    
-    
+      
     
     
 }

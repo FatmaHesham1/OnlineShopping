@@ -25,7 +25,7 @@ DatabaseWriter databasewrite= new DatabaseWriter();
 
   
 
-    public void Register(String Username, String password, String Login_stat, String Fname, String email) throws IOException {
+    public String Register(String Username, String password, String Login_stat, String Fname, String email) throws IOException {
 
       
         FileWriter writeer = new FileWriter(file4, true);
@@ -37,13 +37,13 @@ DatabaseWriter databasewrite= new DatabaseWriter();
      
         
         databasewrite.Write_to_file(file4, array);
-       registerview.AccountCreated();
+      
        }
        else if(check==true ){
-       registerview.AccountExists();
+     registerview.userused();
        }
 
-       
+       return array[2];
 
     }
 

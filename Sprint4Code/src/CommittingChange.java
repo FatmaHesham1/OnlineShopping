@@ -24,7 +24,7 @@ public class CommittingChange {
  {
 
         if (itemList!=null){
-                File usersFile = new File("Aproducts.txt");
+                File usersFile = new File("SoldProducts.txt");
                 FileWriter writer = new FileWriter(usersFile);
                 for (ProductDetails record: itemList) {
                         writer.write(record.getProductName()+"\n" +

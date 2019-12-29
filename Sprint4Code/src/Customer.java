@@ -13,17 +13,21 @@ public class Customer extends UserAccounts {
     public Customer() {
     }
     
+    
+
+   
      CustomerViewing_Site customershow=new  CustomerViewing_Site();
        DatabaseConfirmation databaseconfirm = new DatabaseConfirmation();
    DatabaseWriter databasewrite=new DatabaseWriter();
     BuyingViewer customerview=new BuyingViewer();
      
      
-      CustomersOffers customeroffer=new CustomersOffers();
+     // CustomersOffers customeroffer=new CustomersOffers();
 
    
 
     public void BuyProduct() throws IOException {
+        
          File file5 = new File("SoldProducts.txt");
            File file1 = new File("Aproducts.txt");
        customershow.viewproduct();
@@ -38,10 +42,8 @@ public class Customer extends UserAccounts {
 
         if (check == true) {
           String arrayInfo[]=customerview.EnterInfo();
-            String array[]= {arrayInfo[3], TargetProduct,arrayInfo[1]};
+            String array[]= {arrayInfo[2], TargetProduct,arrayInfo[1]};
             databasewrite.Write_to_file(file5, array);
-           
-             customeroffer.OffersForCustomers();
             customerview.ConfirmBuying();
            
             
