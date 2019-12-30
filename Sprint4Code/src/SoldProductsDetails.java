@@ -9,7 +9,7 @@ public class SoldProductsDetails {
     String  Amount;
     String TargetProduct;
     String price;
-    String FirstTime;
+  
 
     public String getAmount() {
         return Amount;
@@ -35,13 +35,7 @@ public class SoldProductsDetails {
         this.price = price;
     }
 
-    public String getFirstTime() {
-        return FirstTime;
-    }
 
-    public void setFirstTime(String FirstTime) {
-        this.FirstTime = FirstTime;
-    }
     
     
 }

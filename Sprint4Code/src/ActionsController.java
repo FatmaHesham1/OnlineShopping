@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,21 +14,29 @@ import java.util.Scanner;
  */
 public class ActionsController {
 
-    DeleteItems delete = new DeleteItems();
+     
+
+
+
+  AddingCollaborator addcoll=new AddingCollaborator();
     Icommand undoadd=new UndoAdd();
     Icommand undoDelete=new UndoDelete();
+    Icommand undoedit=new UndoEdit();
 
     public void Actions() throws IOException {
 
+        
         Scanner input = new Scanner(System.in);
 
         int choice = 0;
         do {
             System.out.println(" Other Actions.... \n");
-            System.out.println("1.) Deleting product : \n");
-            System.out.println("2.) UndoAdd : \n");
-            System.out.println("3.) UndoDelete : \n ");
-            System.out.println("4.) Exit \n ");
+            System.out.println("1.) Adding Collaborator :");
+            System.out.println("2.) UndoAdd :");
+            System.out.println("3.) UndoDelete : ");
+             System.out.println("4.) UndoEdit : ");
+            
+            System.out.println("5.) Exit \n ");
 
             System.out.print("\nEnter Your Menu Choice: ");
 
@@ -36,8 +45,8 @@ public class ActionsController {
             switch (choice) {
 
                 case 1:
-
-                    delete.delete();
+                   addcoll.Add_collaborator();
+                
                     break;
 
                 case 2:
@@ -47,7 +56,13 @@ public class ActionsController {
                 case 3:
                     undoDelete.Execute();
                     break;
-                case 4:
+                    
+                case 4 : 
+                  
+                 undoedit.Execute();
+                   
+                    break;
+                case 5:
                     System.out.println("Exiting Program...");
                     System.exit(0);
                     break;

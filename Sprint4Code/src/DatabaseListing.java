@@ -1,5 +1,6 @@
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,19 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListingAllProducts {
 
-    public ListingAllProducts() {
+
+public class DatabaseListing {
+
+    public DatabaseListing() {
     }
     
     
-     public List < ProductDetails > listAllProducts() {
+     public List < ProductDetails > listAllProducts(File file) {
 
   BufferedReader bufferedReader;
   List < ProductDetails > itemList = new ArrayList < > ();
 
   try {
-   bufferedReader = new BufferedReader(new FileReader("Aproducts.txt"));
+   bufferedReader = new BufferedReader(new FileReader(file));
    String line;
    List < String > lines = new ArrayList < String > ();
 
@@ -44,3 +47,5 @@ public class ListingAllProducts {
   return itemList;
  }
 }
+
+

@@ -2,7 +2,7 @@
 import java.util.Random;
 import java.util.TimerTask;
 
-public class ProductDetails extends TimerTask {
+public class ProductDetails  {
 		public String ProductName;
 		public String Category;
 		public String BrandName;
@@ -81,21 +81,7 @@ public class ProductDetails extends TimerTask {
     
  
    
-    @Override
-    public void run() {
-      Random rand = new Random(); 
-  
-      
-        int rand_int1 = rand.nextInt(10); 
-        int rand_int2 = rand.nextInt(14);
-         int rand_int3 = rand.nextInt(12);
-         int rand_int4=rand.nextInt(17);
-        System.out.println("The most ordered products : \n" +rand_int1); 
-        System.out.println("The most ordered brands : "+rand_int2); 
-         System.out.println("Number of user buy products in stores : "+rand_int3);
-        System.out.println("Number of users explore his products : "+rand_int4);
-
-    }
+    
       public void printInvoice() {
         System.out.println(String.format("%30s %25s %10s %25s %10s", this.getProductName(), "|", this.getPrice(), "|", this.getCategory()));
     }
