@@ -15,6 +15,7 @@ public class AdminAddStatstics {
      Statstics_user statU = new Statstics_user();
 
     Statstics_products statP = new Statstics_products();
+    
     public void MaxProduct() throws IOException{
     
      System.out.println(statP.MaxProduct()); 

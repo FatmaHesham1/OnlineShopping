@@ -84,7 +84,7 @@ public class AdminController {
             System.out.println("This is not a valid Menu Option! Please Select Another.");
             do {
                 choice = input.nextInt();
-            } while (choice < 7);
+            } while (choice != 6);
         }
 
     }

@@ -5,37 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author User
- */
 public class EditView {
    	
     ArrayList<String> edit = new ArrayList<String>();
- //   ListingAllProducts listproduct=new ListingAllProducts();
     DatabaseListing databaselist=new DatabaseListing();
-    List < ProductDetails > itemList = null;
-     List < Products > itemLists = null;
-    HeadersView headerview=new HeadersView();
-    DatabaseReading database=new DatabaseReading();
-    Listing list=new Listing();
+    ListingView listview=new ListingView();
+    
+           File file=new File("Sproducts.txt");
     
 	public ArrayList<String> Edit() throws IOException {
           
 
-         File file=new File("Sproducts.txt");
-        		if (itemList==null){
-    itemList = databaselist.listAllProducts(file);
-    // print current item in stock 
-    System.out.println("************************************************* SotreOwnerProducts ***********************************************");
-    headerview.printInvoiceHeader();
-    itemList.forEach(ProductDetails::printInvoice);}
+   listview.listviewProductDetails(file);
                  
                 
 		System.out.println("\n Choose a product to be edited : ");
@@ -44,10 +26,10 @@ public class EditView {
 		System.out.println(" What is the new product name ? ");
 		Scanner x2 = new Scanner(System.in);
 		String edited2 = x2.next();
-                System.out.println("what is the new product price ? ");
+                System.out.println("what is the new product category ");
 		Scanner x3 = new Scanner(System.in);
 		String edited3 = x3.next();
-                System.out.println("what is the new product category ");
+                 System.out.println("what is the new product price ? ");
 		Scanner x4 = new Scanner(System.in);
 		String edited4 = x4.next();
 		edit.add(0, edited);
@@ -64,27 +46,16 @@ public class EditView {
         }
         
         public void Before(){
-            File file=new File("SproductsBackup.txt");
-        		if (itemLists==null){
-    itemLists = list.listAllProducts(file);
-    // print current item in stock 
-    System.out.println("************************************************* SotreOwnerProducts before Edit ***********************************************");
-    headerview.printInvoiceHeader();
-    itemLists.forEach(Products::printInvoice);
+              File file1=new File("SproductsBackup.txt");
+       listview.listviewProducts(file1);
  
-                 }
+                 
         
         }
         public  void After(){
         
-            File file=new File("Sproducts.txt");
-            	if (itemList==null){
-    itemList = databaselist.listAllProducts(file);
-    // print current item in stock 
-    System.out.println("************************************************* SotreOwnerProducts ***********************************************");
-    headerview.printInvoiceHeader();
-    itemList.forEach(ProductDetails::printInvoice);
+           listview.listviewProductDetails(file);
  
                  }
         }
-}
+

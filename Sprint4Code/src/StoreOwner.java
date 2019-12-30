@@ -19,7 +19,8 @@ public class StoreOwner {
     
     File file1 = new File("Aproducts.txt");
     File file5 = new File("SoldProducts.txt");
-    DatabaseReading databaseread=new DatabaseReading();
+    ListingView listview=new ListingView();
+ 
     BuyingViewer storeview=new BuyingViewer(); 
     DatabaseConfirmation databaseconfirm=new DatabaseConfirmation();
     DatabaseWriter databasewrite=new DatabaseWriter();
@@ -32,8 +33,8 @@ public class StoreOwner {
     
      public void BuyAsAStoreOwner() throws IOException {
         
-      
-      databaseread.view(file1);
+      listview.listviewProductDetails(file1);
+     
     String TargetProduct=storeview.ChooseProduct();
 storeview.CheckingProduct();
    

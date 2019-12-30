@@ -3,29 +3,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author User
- */
 public class ActionsController {
 
-     
-
-
-
-  AddingCollaborator addcoll=new AddingCollaborator();
-    Icommand undoadd=new UndoAdd();
-    Icommand undoDelete=new UndoDelete();
-    Icommand undoedit=new UndoEdit();
+    AddingCollaborator addcoll = new AddingCollaborator();
+    Icommand undoadd = new UndoAdd();
+    Icommand undoDelete = new UndoDelete();
+    Icommand undoedit = new UndoEdit();
 
     public void Actions() throws IOException {
 
-        
         Scanner input = new Scanner(System.in);
 
         int choice = 0;
@@ -34,8 +20,8 @@ public class ActionsController {
             System.out.println("1.) Adding Collaborator :");
             System.out.println("2.) UndoAdd :");
             System.out.println("3.) UndoDelete : ");
-             System.out.println("4.) UndoEdit : ");
-            
+            System.out.println("4.) Undo the last Edit : ");
+
             System.out.println("5.) Exit \n ");
 
             System.out.print("\nEnter Your Menu Choice: ");
@@ -45,8 +31,8 @@ public class ActionsController {
             switch (choice) {
 
                 case 1:
-                   addcoll.Add_collaborator();
-                
+                    addcoll.Add_collaborator();
+
                     break;
 
                 case 2:
@@ -56,11 +42,12 @@ public class ActionsController {
                 case 3:
                     undoDelete.Execute();
                     break;
-                    
-                case 4 : 
-                  
-                 undoedit.Execute();
-                   
+
+                case 4:
+
+                    undoedit.Execute();
+                    System.out.println("Undo the last edit and here is the file ....");
+
                     break;
                 case 5:
                     System.out.println("Exiting Program...");
@@ -68,8 +55,8 @@ public class ActionsController {
                     break;
             }
 
-        } while (choice > 5);
-
+        } 
+while(choice>5);
     }
 
 }

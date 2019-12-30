@@ -11,14 +11,9 @@ public class BuyingViewer {
     public BuyingViewer() {
     }
     
-    
-    DatabaseReading writer=new DatabaseReading();
+ 
   SoldProductsDetails productDetails=new SoldProductsDetails ();
  
-
-
-
-    
 
     public String ChooseProduct(){
  
@@ -43,6 +38,7 @@ public class BuyingViewer {
         System.out.println("Checking if the product exists or not..");
     }
     
+    
     public String[] EnterInfo() throws IOException{
        
     
@@ -60,8 +56,6 @@ public class BuyingViewer {
         Scanner in = new Scanner(System.in);   
           String type = in.next();
          
-       
-    
         System.out.println("Select the required amount of products : ");
         Scanner input2 = new Scanner(System.in);
         int AmountProduct = input2.nextInt();

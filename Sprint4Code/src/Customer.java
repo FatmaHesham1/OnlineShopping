@@ -22,14 +22,14 @@ public class Customer extends UserAccounts {
     BuyingViewer customerview=new BuyingViewer();
      
      
-     // CustomersOffers customeroffer=new CustomersOffers();
+   
 
    
 
     public void BuyProduct() throws IOException {
         
          File file5 = new File("SoldProducts.txt");
-           File file1 = new File("Aproducts.txt");
+           File file1 = new File("Sproducts.txt");
        customershow.viewproduct();
      
 

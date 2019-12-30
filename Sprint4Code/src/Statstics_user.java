@@ -41,7 +41,7 @@ public class Statstics_user  {
     public String Max() throws IOException {
 
           statview.MaxUserView();
-       String value=  databaseMaxMin.Sort(2, file, "MAX");
+       String value=  databaseMaxMin.Sort(0, file, "MAX");
        return value;
          
        
@@ -50,7 +50,7 @@ public class Statstics_user  {
     public String Min() throws IOException {
         
          statview.MinUserView();
-    String value= databaseMaxMin.Sort(2, file, "min");
+    String value= databaseMaxMin.Sort(0, file, "min");
     return value;
            
        

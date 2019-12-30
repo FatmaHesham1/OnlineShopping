@@ -25,7 +25,7 @@ public class DatabaseEdit {
          DatabaseWriter databasewrite=new DatabaseWriter();
 	
 
-	public void UpdatedProductPrice(File Original,File backup) throws IOException {
+	public void UpdatedProduct(File Original,File backup) throws IOException {
             	
 
 		
