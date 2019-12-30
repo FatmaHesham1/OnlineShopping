@@ -5,6 +5,7 @@
  */
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Timer;
@@ -26,7 +27,8 @@ public class StoreController {
      StoreOwner storebuy=new StoreOwner();
      DeleteItems delete=new DeleteItems();
      Edit_by_StoreOwner edit=new Edit_by_StoreOwner();
-    
+    Store_viewing_stat viewstat=new Store_viewing_stat();
+    ListingView listview=new ListingView();
      
      
         ProductDetails d = new ProductDetails();
@@ -82,6 +84,10 @@ public class StoreController {
 
             case 3:
                 delete.delete();
+                File file2=new File("Sproducts.txt");
+                listview.listviewProductDetails(file2);
+    System.out.println("After deleting the prroduct");
+
                System.out.println("Item is deleted successfully ! ");
                 break;
                 
@@ -93,6 +99,8 @@ public class StoreController {
                 break;
                 
                  case 5:
+                     viewstat.show();
+                     System.out.println("-------------------------------------------------------------------------");
                 Timer timer = new Timer();
    timer.schedule(new Store_viewing_stat(), 0,6000);
    break;
@@ -127,7 +135,7 @@ public class StoreController {
             System.out.println("This is not a valid Menu Option! Please Select Another.");
             do {
                 choice = input.nextInt();
-            } while (choice < 9);
+            } while (choice !=8);
         }
 
     }

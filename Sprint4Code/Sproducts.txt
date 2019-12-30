@@ -16,3 +16,15 @@ drink
 fanta
 20
 softdrink
+pepsi
+drink
+12
+redbull
+drink
+30
+laptop
+12000
+device
+nescafe
+40
+drink

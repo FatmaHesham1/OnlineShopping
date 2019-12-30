@@ -14,7 +14,7 @@ public class DatabaseBackup {
     
    
 
-    public void copy (File Original,File backup) throws FileNotFoundException, IOException
+    public void Backup (File Original,File backup) throws FileNotFoundException, IOException
     {
         PrintWriter writer = new PrintWriter(Original);
 			writer.print("");
@@ -26,7 +26,7 @@ public class DatabaseBackup {
             while(c!=-1)
             {
                 fw.write(c);
-                c = fr.read(); // Add this line
+                c = fr.read(); 
             }
         
        

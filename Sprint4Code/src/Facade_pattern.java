@@ -49,7 +49,7 @@ public class Facade_pattern {
             case 1:
 
                String type= user1.Register(user, pass, stat, fname, mail);
-               if(type.equalsIgnoreCase("Admin")||type.equalsIgnoreCase("Collaborator"))
+               if(type.equalsIgnoreCase("admin")||type.equalsIgnoreCase("collaborator"))
                { System.out.println("This account cannot be created !");
                break; 
                }

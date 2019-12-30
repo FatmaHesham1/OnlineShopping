@@ -58,12 +58,15 @@ public class CustomerController {
                 break;
         }
 
-        if (choice > 5 || choice < 1) {
+        if (choice > 4 || choice < 1) {
             System.out.println("This is not a valid Menu Option! Please Select Another.");
             do {
                 choice = input.nextInt();
-            } while (choice < 5);
+            
+            
         }
-
+while (choice !=4);
     }
 }
+}
+

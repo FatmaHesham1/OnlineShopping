@@ -7,3 +7,6 @@ coca
 iphone
 10%
 11000
+coca
+10%
+19

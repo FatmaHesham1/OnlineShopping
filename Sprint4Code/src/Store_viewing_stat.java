@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.util.TimerTask;
 
@@ -18,6 +19,12 @@ public class Store_viewing_stat extends TimerTask  {
         
         
     }
+    ListingView listview=new ListingView();
+    
+    public void show(){
+    File file=new File("SoldProducts.txt");
+listview.listviewProductDetails(file);
+}
 
 	@Override
 	public void run() {

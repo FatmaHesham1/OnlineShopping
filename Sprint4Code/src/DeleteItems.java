@@ -18,30 +18,22 @@ import static jdk.nashorn.tools.ShellFunctions.input;
 public class DeleteItems {
 
 
- //ListingSoldProducts Stowner = new ListingSoldProducts();
- //ListingAllProducts listproduct=new  ListingAllProducts();
- HeadersView headerview=new  HeadersView();
+
+
  DatabaseListing databaselist=new DatabaseListing();
  CommittingChange commitchange=new CommittingChange();
- 
+ ListingView listview=new ListingView();
 
   Scanner input = new Scanner(System.in);
   List < ProductDetails > itemList = null;
  
     public void delete() throws IOException{
-   
+         File file2=new File("Sproducts.txt");
+   listview.listviewProductDetails(file2);
 
-    // print sold item 
-       File file2=new File("Sproducts.txt");
+    
     List < ProductDetails > soldItems = databaselist.listAllProducts(file2);
-    if (soldItems.size()>0){
-        System.out.println("\n\n\n************************************************ SOTREOWNER PRODUCTS *********************************************");
-
-    headerview.printSoldItemsHeader();
-    soldItems.forEach(ProductDetails::printInvoice);
-}
-   
- 
+    
    System.out.print("Select product index you wanna delete  :");
     int index = input.nextInt();
     if (index<0 || index>=soldItems.size()){
@@ -52,5 +44,7 @@ public class DeleteItems {
     
     soldItems.remove(index);
     commitchange.commitChange(soldItems);
+
+    
     }
-}}
+    }}

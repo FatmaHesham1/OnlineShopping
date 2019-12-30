@@ -18,16 +18,15 @@ public class CustomerViewing_Site {
     public CustomerViewing_Site() {
     }
     
-    
-    DatabaseReading databasereader=new DatabaseReading();
+ListingView listview=new ListingView();
      public void viewproduct() throws FileNotFoundException, IOException {
-         File file2 = new File("Aproducts.txt");
-        databasereader.view(file2);
+         File file2 = new File("Sproducts.txt");
+        listview.listviewProductDetails(file2);
 
     }
 
     public void viewStore() throws FileNotFoundException, IOException {
-  File file3 = new File("Sproducts.txt");
-      databasereader.view(file3);
+  File file3 = new File("AddStores.txt");
+     listview.listviewProductDetails(file3);
     }
 }

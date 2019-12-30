@@ -5,8 +5,6 @@ public class HeadersView {
     }
     
     
-    ProductDetails ProductDetails=new ProductDetails();
-    
      public static void printInvoiceHeader() {
         System.out.println(String.format("%30s %25s %10s %25s %10s", "Item", "|", "Price($)", "|", "Category"));
         System.out.println(String.format("%s", "----------------------------------------------------------------------------------------------------------------"));

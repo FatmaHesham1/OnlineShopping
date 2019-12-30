@@ -14,7 +14,7 @@ public class Edit_by_StoreOwner {
         
         File Original = new File("Sproducts.txt");
         File backup = new File("SproductsBackup.txt");
-         data.UpdatedProductPrice(Original, backup);
+         data.UpdatedProduct(Original, backup);
          
         editview.Finish();
         editview.After();

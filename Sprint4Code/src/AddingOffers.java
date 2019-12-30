@@ -12,14 +12,14 @@ public class AddingOffers {
    AdminOffersView offersviewer=new AdminOffersView();
       File file3 = new File("Aproducts.txt");
     File file4 = new File("Offers.txt");
-    DatabaseReading databasereader=new  DatabaseReading();
+ ListingView listview=new ListingView();
     DatabaseConfirmation databaseconfirmation=new DatabaseConfirmation();
     DatabaseWriter databasewriter=new DatabaseWriter();
     
     
     public void choose_offered_product() throws IOException {
+       listview.listviewProductDetails(file3);
        
-        databasereader.view(file3);
        String pname= offersviewer.chooseProduct();
         String productName[]={pname};
         boolean check=databaseconfirmation.Read(file3, productName, 1);

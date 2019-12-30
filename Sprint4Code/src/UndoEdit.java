@@ -22,7 +22,7 @@ DatabaseBackup database=new DatabaseBackup();
     @Override
     public void Execute() {
     try {
-        database.copy(Original, backup);
+        database.Backup(Original, backup);
        editview.Before();
     } catch (IOException ex) {
         Logger.getLogger(UndoEdit.class.getName()).log(Level.SEVERE, null, ex);

@@ -33,7 +33,7 @@ public class Statstics_products  {
      
             File file = new File("SoldProducts.txt");
             statviewer.MaxProductView();
-          String value=  databasesort.Sort(0, file, "MAX");
+          String value=  databasesort.Sort(2, file, "MAX");
           return value;
             
        
@@ -45,7 +45,7 @@ public class Statstics_products  {
        
             File file = new File("SoldProducts.txt");
             statviewer.MinProductView();
-           String value= databasesort.Sort(0, file, "min");
+           String value= databasesort.Sort(2, file, "min");
            
            return value;
             

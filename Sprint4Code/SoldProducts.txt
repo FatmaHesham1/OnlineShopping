@@ -19,3 +19,9 @@ coca
 ee
 Product1
 85
+memo
+redbull
+28
+iphone
+memo
+10200
