@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -17,9 +18,10 @@ import static jdk.nashorn.tools.ShellFunctions.input;
 public class DeleteItems {
 
 
- ListingSoldProducts Stowner = new ListingSoldProducts();
- ListingAllProducts listproduct=new  ListingAllProducts();
+ //ListingSoldProducts Stowner = new ListingSoldProducts();
+ //ListingAllProducts listproduct=new  ListingAllProducts();
  HeadersView headerview=new  HeadersView();
+ DatabaseListing databaselist=new DatabaseListing();
  CommittingChange commitchange=new CommittingChange();
  
 
@@ -27,18 +29,13 @@ public class DeleteItems {
   List < ProductDetails > itemList = null;
  
     public void delete() throws IOException{
-        
-      if (itemList==null)
-    itemList = listproduct.listAllProducts();
-    // print current item in stock 
-    System.out.println("************************************************* INVENTORY ********************s***************************");
-    headerview.printInvoiceHeader();
-    itemList.forEach(ProductDetails::printInvoice);
+   
 
     // print sold item 
-    List < ProductDetails > soldItems = Stowner.listSoldProducts();
+       File file2=new File("Sproducts.txt");
+    List < ProductDetails > soldItems = databaselist.listAllProducts(file2);
     if (soldItems.size()>0){
-        System.out.println("\n\n\n************************************************ SOLD PRODUCTS *********************************************");
+        System.out.println("\n\n\n************************************************ SOTREOWNER PRODUCTS *********************************************");
 
     headerview.printSoldItemsHeader();
     soldItems.forEach(ProductDetails::printInvoice);
